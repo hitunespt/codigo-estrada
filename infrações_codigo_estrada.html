@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrações, Perda de Pontos e Coimas - Código da Estrada Portugal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .filter-buttons { text-align: center; margin-bottom: 20px; }
+        .filter-buttons button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+    </style>
+    <script>
+        function filterTable(category) {
+            var rows = document.querySelectorAll("table tbody tr");
+            rows.forEach(row => {
+                if (category === "all" || row.classList.contains(category)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Infrações, Perda de Pontos e Coimas - Código da Estrada Portugal</h1>
+    <div class="filter-buttons">
+        <button onclick="filterTable('all')">Todas</button>
+        <button onclick="filterTable('leve')">Leves</button>
+        <button onclick="filterTable('grave')">Graves</button>
+        <button onclick="filterTable('muito-grave')">Muito Graves</button>
+        <button onclick="filterTable('crime')">Crimes Rodoviários</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Infração</th>
+                <th>Categoria</th>
+                <th>Perda de Pontos</th>
+                <th>Coima</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="leve">
+                <td>Estacionamento proibido</td>
+                <td>Leve</td>
+                <td>0 pontos</td>
+                <td>30€ – 150€</td>
+            </tr>
+            <tr class="grave">
+                <td>Excesso de velocidade > 30 km/h fora das localidades</td>
+                <td>Grave</td>
+                <td>2 pontos</td>
+                <td>120€ – 600€</td>
+            </tr>
+            <tr class="muito-grave">
+                <td>Excesso de velocidade > 60 km/h fora das localidades</td>
+                <td>Muito Grave</td>
+                <td>4 pontos</td>
+                <td>300€ – 1.500€</td>
+            </tr>
+            <tr class="crime">
+                <td>Condução com taxa de álcool no sangue superior a 1,2 g/l</td>
+                <td>Crime Rodoviário</td>
+                <td>6 pontos</td>
+                <td>500€ – 2.500€</td>
+            </tr>
+            <tr class="grave">
+                <td>Não usar cinto de segurança</td>
+                <td>Grave</td>
+                <td>2 pontos</td>
+                <td>120€ – 600€</td>
+            </tr>
+            <tr class="leve">
+                <td>Não usar capacete (motos)</td>
+                <td>Leve</td>
+                <td>0 pontos</td>
+                <td>60€ – 300€</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
